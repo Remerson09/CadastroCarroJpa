@@ -39,10 +39,10 @@ public class VeiculoRepository {
         }
     }
 
-    public List<Veiculo> buscarPorModelo(String modelo) {
+    public List<Veiculo> buscarPorMarca(String marca) {
         return em.createQuery(
-                        "SELECT v FROM Veiculo v WHERE v.modelo LIKE :modelo", Veiculo.class)
-                .setParameter("modelo", "%" + modelo + "%")
+                        "SELECT v FROM Veiculo v WHERE v.marca LIKE :marca", Veiculo.class)
+                .setParameter("marca", "%" + marca + "%")
                 .getResultList();
     }
 }

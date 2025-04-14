@@ -49,12 +49,12 @@ public class VeiculoController {
     }
 
     @PostMapping("/buscar")
-    public ModelAndView buscar(@RequestParam("modelo") String modelo, ModelMap model) {
-        List<Veiculo> encontrados = repository.buscarPorModelo(modelo);
+    public ModelAndView buscar(@RequestParam("marca") String marca, ModelMap model) {
+        List<Veiculo> encontrados = repository.buscarPorMarca(marca);
         model.addAttribute("veiculos", encontrados.isEmpty() ?
                 repository.listarTodos() : encontrados);
         if (encontrados.isEmpty()) {
-            model.addAttribute("msgErro", "Nenhum veículo encontrado");
+            model.addAttribute("msgErro", "Nenhum veículo encontrado com a marca informada");
         }
         return new ModelAndView("/veiculo/list", model);
     }
