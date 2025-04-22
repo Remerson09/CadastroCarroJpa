@@ -5,11 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Aula2603Application {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Aula2603Application.class, args);
 	}
-
-	//método adicional
-
 }
